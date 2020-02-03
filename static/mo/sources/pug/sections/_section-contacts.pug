@@ -1,0 +1,52 @@
+section.section.section-lg.bg-default
+	.container
+		.layout-bordered
+			.layout-bordered-aside: .layout-bordered-aside-inner
+				h2 Contact Details
+				p If you have any questions, just fill in the contact form, and we will answer you shortly. If you are living nearby, come visit our office.
+				.layout-bordered-aside-group
+					dl.list-terms-1
+						dt Client Support:
+						dd
+							span.icon.mdi-phone.mdi
+							a.list-terms-1-link-big(href='tel:#') 1-800-1234-567
+					dl.list-terms-1
+						dt E-mail:
+						dd
+							span.icon.mdi.mdi-email-outline
+							a(href='mailto:#') info@demolink.org
+					dl.list-terms-1
+						dt Main Office:
+						dd
+							span.icon.mdi.mdi-map-marker
+							a(href='#') 3015 Grand Ave, Coconut Grove,Merrick Way, FL 12345
+
+			.layout-bordered-main
+				.layout-bordered-main-inner
+					h2 Get in Touch
+					// RD Mailform
+					form.rd-form.rd-mailform(
+					data-form-output='form-output-global'
+					data-form-type='contact'
+					method='post'
+					action='bat/rd-mailform.php')
+						.row.row-20
+							.col-md-12
+								.form-wrap
+									input#contact-name.form-input(type='text' name='name' data-constraints='@Required')
+									label.form-label(for='contact-name') Your Name
+							.col-md-12
+								.form-wrap
+									input#contact-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+									label.form-label(for='contact-email') E-mail
+							.col-md-12
+								.form-wrap
+									input#contact-phone.form-input(type='text' name='phone' data-constraints='@PhoneNumber')
+									label.form-label(for='contact-phone') Phone
+							.col-12
+								.form-wrap
+									label.form-label(for='contact-message') Message
+									textarea#contact-message.form-input(name='message' data-constraints='@Required')
+							.col-md-12
+								button.button.button-sm.button-secondary(type='submit') Send message
+

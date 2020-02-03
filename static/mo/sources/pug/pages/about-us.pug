@@ -1,0 +1,91 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-box-modern
+	
+block variables
+	- var activeCategory = 'about'
+	- var pageName = 'About Us'
+
+block page
+	include ../sections/_header-classic
+		
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'breadcrumbs-bg-01-1922x291',
+		data: '59'
+	})
+
+	// Shortly About Us
+	section.section.section-md.bg-default
+		.container
+			// Box Info
+			article.box-info.box-info-1
+				.box-info-aside
+					.image-block-1(style='background-image: url(images/about-us-1-599x535.jpg);')
+				.box-info-main.context-dark: .box-info-main-inner
+					h2.f1 Experience since 1999
+					.divider-small
+					// Bootstrap tabs
+					#tabs-1.tabs-custom.tabs-horizontal.tabs-line
+						// Nav tabs
+						ul.nav.nav-tabs
+							li.nav-item(role='presentation'): a.nav-link.active(href='#tabs-1-1' data-toggle='tab') Our goal
+							li.nav-item(role='presentation'): a.nav-link(href='#tabs-1-2' data-toggle='tab') About Us
+							li.nav-item(role='presentation'): a.nav-link(href='#tabs-1-3' data-toggle='tab') Our Mission
+
+						// Tab panes
+						.tab-content
+							div#tabs-1-1.tab-pane.fade.show.active
+								p We have been working since 1999 to be sure you are getting the best real estate service possible.
+								p Real Estate aims to unite real estate brokers to provide their clients and partners with the top-notch level of brokerage services throughout the USA.
+
+							div#tabs-1-2.tab-pane.fade
+								p Real Estate is a full-service, luxury real estate brokerage company representing clients worldwide.
+								ul.list-marked-1.cols-2
+									li More Listings
+									li Property for Rent and Sale
+									li Top Rated Agents
+									li Home Estimates
+
+							div#tabs-1-3.tab-pane.fade
+								p Our mission is to be the most successful real estate firm in the local states and beyond.
+								p Real Estate incorporates proven, professional state of-the-art techniques specializing in the marketing, listing and selling of new and resale luxury homes.
+					a.button.button-sm.button-secondary(href='contact-us.html') Get in Touch
+			
+	// Features
+	section.section.section-lg.bg-default
+		.container
+			.row.row-flex.row-30.justify-content-center
+				.col-md-6.col-lg-4
+					+box-modern({
+						icon: 'fl-bigmug-line-big104',
+						title: 'Various Locations',
+						text: 'We have lots of properties in various locations available for purchase.'
+					})
+				.col-md-6.col-lg-4
+					+box-modern({
+						icon: 'fl-bigmug-line-wallet26',
+						title: 'No Commission',
+						text: 'Opportunity to acquire a quality apartment for rent without having to pay any commission.'
+					})
+				.col-md-6.col-lg-4
+					+box-modern({
+						icon: 'fl-bigmug-line-search74',
+						title: 'View Apartments',
+						text: 'View apartment listings with photos, HD videos, virtual tours, 3D floor plans etc.'
+					})
+
+	// Agents
+	section.section.section-md.bg-default
+		.container
+			h2.heading-decoration-1: span.heading-inner Our Agents
+			include ../includes/_row-agents
+			
+	include ../sections/_section-newsletter
+
+	include ../sections/_section-partners
+
+
+	include ../sections/_footer-classic

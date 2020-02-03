@@ -1,0 +1,365 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-header-classic
+include ../components/_ui-box-minimal
+include ../components/_ui-thumbnail-indigo
+
+block variables
+  - var activeCategory = 'home'
+  - var pageName = 'Home'
+
+block page
+  // Page Header
+  header.section.page-header
+    +header-classic({
+      customButton: true
+    })
+      a.button.button-sm.button-primary(href=links.getTemplate target='_blank') Get template
+
+  // FScreen
+  section.section.jumbotron-2.bg-accent.bg-primary-lighten
+    .container
+      .jumbotron-2-inner
+        .jumbotron-2-main
+          p.heading-7.wow.fadeIn Become a leader in your market 
+          h2.wow.fadeIn(data-wow-delay='.05s') Real Estate Template
+          ul.list-marked-3
+            li.wow.fadeIn(data-wow-delay='.1s') 3 home page layouts
+            li.wow.fadeIn(data-wow-delay='.15s') Advanced property search
+            li.wow.fadeIn(data-wow-delay='.2s') Fully Customizable
+          a.link-2.wow.fadeIn(data-wow-delay='.25s' href='#section-1' data-waypoint-to='#section-1') Read More...
+        .jumbotron-2-slider
+          // Owl Carousel
+          .owl-carousel.wow.fadeIn(
+          data-items='1'
+          data-dots='true'
+          data-nav='false'
+          data-stage-padding='0'
+          data-loop='true'
+          data-margin='0'
+          data-autoplay='true'
+          data-autoplay-speed='3500'
+          data-animation-in='fadeIn'
+          data-animation-out='fadeOut'
+          data-mouse-drag='false')
+            a.jumbotron-2-slider-link(href='real-estate-1.html' style='background-image: url(images/landing/real-estate-1.jpg);')
+            a.jumbotron-2-slider-link(href='real-estate-2.html' style='background-image: url(images/landing/real-estate-2.jpg);')
+            a.jumbotron-2-slider-link(href='real-estate-3.html' style='background-image: url(images/landing/real-estate-3.jpg);')
+
+  // Shortly About Us
+  section.section.section-lg.bg-default#section-1
+    .container
+      // Box Info
+      article.box-info.box-info-1
+        .box-info-aside
+          .row.row-30.row-flex
+            .col-sm-6.wow.fadeIn
+              +box-minimal({
+                icon: 'fl-bigmug-line-square160',
+                title: 'Advanced UI Kit',
+                text: 'Make your website look attractive with our Advanced UI Kit.'
+              })
+            .col-sm-6.wow.fadeIn(data-wow-delay='.05s')
+              +box-minimal({
+                icon: 'fl-bigmug-line-cellphone55',
+                title: 'Great Responsiveness',
+                text: 'This template is designed to be displayed on any device.'
+              })
+            .col-sm-6.wow.fadeIn
+              +box-minimal({
+                icon: 'fl-bigmug-line-equalization3',
+                title: 'Bootstrap Toolkit',
+                text: 'Bootstrap toolkit offers incredible customization possibilities.'
+              })
+            .col-sm-6.wow.fadeIn(data-wow-delay='.05s')
+              +box-minimal({
+                icon: 'fl-bigmug-line-two316',
+                title: 'Free Updates',
+                text: 'Get free 24/7 support to solve any template related issue.'
+              })
+        .box-info-main.context-dark.bg-primary-lighten: .box-info-main-inner
+          h2.wow.fadeIn(data-wow-delay='.05s') Template Features
+          .divider-small.wow.fadeIn(data-wow-delay='.1s')
+          p.wow.fadeIn(data-wow-delay='.15s') This template showcases lots of features, which can be succesfully used to enhance the look of your resource and improve its functionality as well as:
+          ul.list-marked-1.cols-2
+            li.wow.fadeIn(data-wow-delay='.2s') Attract Clients
+            li.wow.fadeIn(data-wow-delay='.25s') Publish News
+            li.wow.fadeIn(data-wow-delay='.3s') Get Feedback
+            li.wow.fadeIn(data-wow-delay='.35s') Customize Your Website
+          a.button.button-secondary.mt-lg-60.wow.fadeIn(data-wow-delay='.4s' href=links.getTemplate target='_blank') get template
+
+  // Counters
+  +parallax({
+    img: 'images/bg-02-1920x916.jpg'
+  }).section-lg.context-dark.text-center.bg-darkblue-2_1
+    .container
+      .row.row-30
+        .col-6.col-md-3.wow.fadeIn
+          // Box counter
+          article.box-counter
+            .box-counter-main
+              .counter 15
+              span +
+            p.box-counter-title Years of Experience
+
+        .col-6.col-md-3.wow.fadeIn(data-wow-delay='.05s')
+          // Box counter
+          article.box-counter
+            .box-counter-main
+              .counter 3
+            p.box-counter-title Perfect Layouts
+
+        .col-6.col-md-3.wow.fadeIn(data-wow-delay='.1s')
+          // Box counter
+          article.box-counter
+            .box-counter-main
+              .counter 25
+            p.box-counter-title Qualified Specialists
+
+        .col-6.col-md-3.wow.fadeIn(data-wow-delay='.15s')
+          // Box counter
+          article.box-counter
+            .box-counter-main
+              .counter 30
+              span +
+            p.box-counter-title PSD Files Included
+
+  // Pages
+  section.section.section-lg.bg-gray-12
+    .container.isotope-wrap
+      h2.text-center Pages
+      .isotope.row.row-30(data-isotope-layout='masonry')
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Real Estate 1'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Real Estate 2'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Real Estate 3'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'About Us'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Properties Grid'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Properties Grid 2'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Properties List'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Single Property'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Submit Property'
+          }).thumbnail-indigo-sm
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Blog'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Blog post'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Agents'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Agents 2'
+          }).thumbnail-indigo-sm
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Agent Single Page'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Testimonials'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Careers'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'FAQ'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Gallery Grid'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Search results'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Search results 2'
+          }).thumbnail-indigo-sm
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Contact Us'
+          }).thumbnail-indigo-sm
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Coming Soon'
+          }).thumbnail-indigo-sm
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Maintenance'
+          }).thumbnail-indigo-sm
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: '503'
+          }).thumbnail-indigo-sm
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: '404'
+          }).thumbnail-indigo-sm
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Privacy Policy'
+          }).thumbnail-indigo-sm
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Typography'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Buttons'
+          }).thumbnail-indigo-sm
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Forms'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Tabs and Accordions'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Progress bars'
+          })
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Tables'
+          }).thumbnail-indigo-sm
+
+        .col-sm-6.col-lg-4.isotope-item
+          +thumbnail-indigo({
+            title: 'Grid System'
+          }).thumbnail-indigo-sm
+
+
+  // Advanced and Easily Customizable Properties Search
+  section.section.section-lg.bg-default
+    .container
+      .row.row-50.align-items-center
+        .col-xl-5: .pdl-lg-30
+          h2.wow.fadeIn Advanced and Easily Customizable Properties Search
+          ul.list-marked-3
+            li.wow.fadeIn(data-wow-delay='.05s') Grid & List Layouts for Your Properties
+            li.wow.fadeIn(data-wow-delay='.1s') Find Properties using Google Maps
+            li.wow.fadeIn(data-wow-delay='.15s') Powerful Single Property Post
+          a.button.button-secondary.wow.fadeIn(data-wow-delay='.2s' href=links.getTemplate target='_blank') Get template
+
+        .col-xl-7
+          .image-group-1
+            a.wow.fadeIn(href='single-property.html'): +jpg('landing-1-500x406')
+            a.wow.fadeIn(data-wow-delay='.05s' href='search-results-2.html'): +jpg('landing-2-322x258')
+            a.wow.fadeIn(data-wow-delay='.1s' href='properties-grid.html'): +jpg('landing-3-314x321')
+
+  // Pages for Real Estate Brokers
+  section.section.section-lg.section-bottom-0.oh.bg-gray-12.text-center
+    .container
+      h2 Pages for Real Estate Brokers 
+      .image-group-2
+        a.wow.fadeIn(href='agents.html'): +jpg('landing-3-370x369')
+        a.wow.fadeIn(data-wow-delay='.05s' href='agent-single-page.html'): +jpg('landing-4-569x445')
+        a.wow.fadeIn(data-wow-delay='.1s' href='agents-2.html'): +jpg('landing-5-370x369')
+
+  // Other Nice Bonuses You Get
+  section.section.section-lg.bg-default.text-center
+    .container
+      h2.wowfadeIn Other Nice Bonuses You Get
+      .row.row-30
+        .col-sm-6.col-lg-3.wow.fadeIn
+          // Box Industrial
+          article.box-industrial
+            .box-industrial-aside
+              .icon.box-industrial-icon.mercury-icon-gears
+            .box-industrial-main
+              h3.box-industrial-title Full Customization
+              p Easily change your website
+        .col-sm-6.col-lg-3.wow.fadeIn(data-wow-delay='.05s')
+          // Box Industrial
+          article.box-industrial
+            .box-industrial-aside
+              .icon.box-industrial-icon.mercury-icon-chat
+            .box-industrial-main
+              h3.box-industrial-title 24\7 Support
+              p Always dedicated and free  
+        .col-sm-6.col-lg-3.wow.fadeIn(data-wow-delay='.1s')
+          // Box Industrial
+          article.box-industrial
+            .box-industrial-aside
+              .icon.box-industrial-icon.mercury-icon-paper
+            .box-industrial-main
+              h3.box-industrial-title Useful Pages
+              p Blog, gallery, careers etc.
+        .col-sm-6.col-lg-3.wow.fadeIn(data-wow-delay='.15s')
+          // Box Industrial
+          article.box-industrial
+            .box-industrial-aside
+              .icon.box-industrial-icon.mercury-icon-news
+            .box-industrial-main
+              h3.box-industrial-title Premium Images 
+              p Save more than $35 on images
+
+  // Page Footer
+  include ../sections/_footer-classic

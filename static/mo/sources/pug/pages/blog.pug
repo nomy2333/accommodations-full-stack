@@ -1,0 +1,62 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-posts
+	
+block variables
+	- var activeCategory = 'blog'
+	- var pageName = 'Blog'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'breadcrumbs-bg-05-1922x441',
+		data: '45'
+	})
+
+	// Section Blog
+	section.section.section-md.bg-gray-12
+		.container
+			.row.row-40.row-lg-60
+				.col-md-6.col-xl-4
+					+post-default({
+						image: 'blog-01-736x540',
+						title: 'Special Unveiling of 568 N. Tigertail Road',
+						text: 'Our Principal and Partner, Samuel McMillan, recently celebrated the unveiling of 568 N. Tigertail Road, a newly-constructed estate'
+					})
+				.col-md-6.col-xl-4
+					+post-default({
+						image: 'blog-02-736x540',
+						title: 'Turks and Caicos Villa to be Sold for Record $7.6M',
+						text: 'The Agency is pleased to announce the sale of 24 Cherokee Road for $7.625 million—the highest-priced residential sale in Turks and'
+					})
+				.col-md-6.col-xl-4
+					+post-default({
+						image: 'blog-03-736x540',
+						title: 'How We Build a Better LA for Fifth Year in a Row',
+						text: 'Last week, we partnered with Habitat for Humanity of Greater Los Angeles (Habitat LA) for the fifth year in a row for a build day '
+					})
+				.col-md-6.col-xl-4
+					+post-default({
+						image: 'blog-04-736x540',
+						title: 'Introducing A Ray Kappe-Designed Masterpiece',
+						text: 'The famed Cipriani family has unveiled Mr. C Residences, its first-ever hotel branded residences, situated adjacent to the flagship '
+					})
+				.col-md-6.col-xl-4
+					+post-default({
+						image: 'blog-05-736x540',
+						title: 'Our Agents Own13 Real Trends of “The Thousand 2017”',
+						text: 'The results are in for REAL Trends’ "The Thousand 2017," and we are thrilled to have 13 of our agents recognized among the best '
+					})
+				.col-md-6.col-xl-4
+					+post-default({
+						image: 'blog-06-736x540',
+						title: 'Stunning Office in Culver City Designed by Paul McClean',
+						text: 'The daily grind and drudgery associated with plying your trade in an “office space” has been much maligned, and rightly so. As our '
+					})
+
+
+	include ../sections/_footer-classic

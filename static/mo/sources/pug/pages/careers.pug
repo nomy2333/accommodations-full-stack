@@ -1,0 +1,63 @@
+extends  ../_skeleton
+
+include ../components/_ui-posts
+
+//- Includes
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Careers'
+
+block page
+	include ../sections/_header-classic
+		
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		bgImage: 'breadcrumbs-bg-09-1920x420',
+		data: '48'
+	}).breadcrumbs-bg-1
+
+	// Your career starts here!
+	section.section.section-md.bg-default
+		.container
+			.row.row-40.align-items-lg-center
+				.col-lg-6
+					.mr-lg-minus-30
+						+jpg('careers-01-1196x768')
+				.col-lg-6
+					.pdl-lg-70.pdr-lg-20
+						h3 Your career starts here!
+						p We seek individuals who share our values as a means of reinforcing and furthering the company's successful philosophy. We are looking for motivated, positive people specializing in:
+						ul.list-3
+							li Marketing
+							li Management
+							li Insurance
+							li Event Organization
+						a.button-default-outline.button.text-spacing-50(href='agents.html') Join our Team now
+
+
+	// Available Vacancies
+	section.section.section-lg.bg-gray-12.text-center
+		.container
+			h2 Available Vacancies
+			p.post-head Here’s a list of recently opened positions at Real Estate.
+			.row.row-30
+				.col-md-6
+					+post-modern({
+						title: 'Sales Manager'
+					})
+				.col-md-6
+					+post-modern({
+						title: 'Office Manager'
+					})
+				.col-md-6
+					+post-modern({
+						title: 'Real Estate Broker'
+					})
+				.col-md-6
+					+post-modern({
+						title: 'PR Manager'
+					})
+
+
+	include ../sections/_footer-classic

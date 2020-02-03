@@ -1,0 +1,107 @@
+-
+	var
+		html_class = "wide wow-animation",
+		fonts = "//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900%7CRoboto:300,400,500,700,900",
+		subscribeFormCounter = 0,
+		brand = {
+			name: 'Real Estate',
+			default: { normal: 'logo-default-121x61', retina: 'logo-default-242x122' },
+			inverse: { normal: 'logo-inverse-121x61', retina: 'logo-inverse-242x122' },
+			inverse2: { normal: 'logo-inverse-2-121x61', retina: 'logo-inverse-2-242x122' }
+		},
+		links = {
+			post: 'blog-post.html',
+			getTemplate:'#get-template'
+		},
+		colors = {
+			primary: '#6b9dee',
+			secondary: '#4b9ef1'
+		},
+		menu = [ 
+			{
+				title: 'Home',
+				category: 'home',  
+				link: 'index.html'
+			},
+			{
+				title: 'Properties',
+				category: 'properties',
+				link: '#',
+				dropdown: [
+					{ title: 'Properties Grid' }, 
+					{ title: 'Properties Grid 2' },
+					{ title: 'Properties List' },
+					{ title: 'Single Property' },
+					{ title: 'Submit Property' }
+				]
+			},
+			{
+				title: 'About Us',
+				category: 'about'
+			},
+			{
+				title: 'Blog',
+				category: 'blog',
+				dropdown: [
+					{
+						title: 'Blog post',
+						link: links.post
+					}
+				] 
+			},
+			{
+				title: 'Pages',
+				category: 'pages',
+				link: '#',
+				megamenu: [
+					{
+						title: 'Pages 1',
+						list: [
+							{ title: 'Agents' },
+							{ title: 'Agents 2' },
+							{ title: 'Agent Single Page' },
+							{ title: 'Testimonials' },
+							{ title: 'Careers' },
+							{ title: 'FAQ' },
+							{ title: 'Gallery Grid' }
+						]
+					},
+					{
+						title: 'Pages 2',
+						list: [
+							{ title: 'Search results' },
+							{ title: 'Search results 2' },
+							{ title: 'Coming Soon' },
+							{ title: 'Maintenance' },
+							{ title: '503' },
+							{ title: '404' },
+							{ title: 'Privacy Policy' }
+						]
+					},
+					{
+						title: 'Elements',
+						list: [
+							{ title: 'Typography' },
+							{ title: 'Buttons' },
+							{ title: 'Forms' },
+							{ title: 'Tabs and accordions' },
+							{ title: 'Progress bars' },
+							{ title: 'Tables' },
+							{ title: 'Grid System' }
+						]
+					},
+					{
+						title: 'Layouts',
+						list: [
+							{ title: 'Real Estate 1' },
+							{ title: 'Layout #2 ', link: 'real-estate-2.html' },
+							{ title: 'Layout #3', link: 'real-estate-3.html' }
+						]
+					}
+				]
+			},
+			{
+				title: 'Contact Us',
+				category: 'contacts'
+			}
+		];

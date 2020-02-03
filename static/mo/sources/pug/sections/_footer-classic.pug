@@ -1,0 +1,67 @@
+// Pre footer section
+- var uniquePrefix = ''
+section.section.section-md.bg-gray-31.context-dark
+	.container
+		.row.row-40.justify-content-lg-between
+			.col-md-6.col-lg-4.col-xl-3
+				h3.heading-square.font-weight-sbold(data-item='.heading-square-item')
+					span.heading-square-item
+					| Latest Properties
+				a.post-minimal(href='single-property.html')
+					.post-minimal-image
+						+jpg('post-minimal-01-161x136')
+					.post-minimal-body
+						.post-minimal-title: span  Retail Store Southwest 186th Street
+						.post-minimal-text: span From $120/month
+				a.post-minimal(href='single-property.html')
+					.post-minimal-image
+						+jpg('post-minimal-02-161x136')
+					.post-minimal-body
+						.post-minimal-title: span  Apartment Building with Subunits
+						.post-minimal-text: span From $120/month
+			.col-md-6.col-lg-4.col-xl-3.col-bordered
+				h3.heading-square.font-weight-sbold(data-item='.heading-square-item')
+					span.heading-square-item
+					| Contact	Us
+				.link-with-icon.heading-4.text-spacing-150.font-sec(data-item='.icon')
+					span.icon.icon-1.mdi.mdi-phone
+					a(href='tel:#') 1-800-700-6200
+
+				.link-with-icon.text-spacing-100(data-item='.icon')
+					span.icon.icon-2.mdi.mdi-email-outline
+					a(href='mailto:#') info@demolink.org
+
+				.link-with-icon.text-spacing-100(data-item='.icon')
+					span.icon.icon-3.mdi.mdi-map-marker
+					a(href='#') 3015 Grand Ave, Coconut
+						br(style='line-height: 0')
+						=" "
+						| Grove,Merrick Way, FL 12345
+			.col-lg-4
+				h3.heading-square.font-weight-sbold(data-item='.heading-square-item')
+					span.heading-square-item
+					| Newsletter Signup
+				p.rd-mailform-label Enter your e-mail to get the latest news of Real Estate
+				form.rd-form.rd-mailform.rd-form-inline-1(data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+					.form-wrap
+						input.form-input(id="subscribe-form-" + uniquePrefix + "-email" type="email" name="email" data-constraints="@Email @Required")
+						label.form-label(for="subscribe-form-" + uniquePrefix + "-email") Your e-mail
+					.form-button
+						button.button.button-primary.button-square(type="submit") Subscribe
+				ul.list-inline-1
+					li: a.icon.fa-facebook(href='#')
+					li: a.icon.fa-twitter(href='#')
+					li: a.icon.fa-google-plus(href='#')
+					li: a.icon.fa-pinterest-p(href='#')
+
+// Page footer
+footer.section.footer-classic.context-dark.bg-gray-21
+	.container
+		.row.row-10.justify-content-sm-between
+			.col-sm-6
+				+rights
+			.col-sm-6.text-sm-right
+				.right-1
+					a(href='submit-property.html')
+						span.icon.mdi.mdi-plus
+						| Submit Property

@@ -1,0 +1,107 @@
+mixin header-classic(obj)
+	// RD Navbar
+	.rd-navbar-wrap
+		nav.rd-navbar.rd-navbar-classic(
+		data-layout=                'rd-navbar-fixed'
+		data-sm-layout=             'rd-navbar-fixed'
+		data-md-layout=             'rd-navbar-fixed'
+		data-md-device-layout=      'rd-navbar-fixed'
+		data-lg-layout=             'rd-navbar-static'
+		data-lg-device-layout=      'rd-navbar-fixed'
+		data-xl-layout=             'rd-navbar-static'
+		data-xl-device-layout=      'rd-navbar-static'
+		data-lg-stick-up-offset=    '46px'
+		data-xl-stick-up-offset=    '46px'
+		data-xxl-stick-up-offset=   '46px'
+		data-lg-stick-up=           'true'
+		data-xl-stick-up=           'true'
+		data-xxl-stick-up=          'true')&attributes(attributes)
+			.rd-navbar-aside-outer
+				.rd-navbar-aside
+					.rd-navbar-collapse-toggle.rd-navbar-fixed-element-1(data-rd-navbar-toggle='.rd-navbar-collapse'): span
+					ul.rd-navbar-aside-list.rd-navbar-collapse
+						li: .block-inline.unit.unit-spacing-xs.align-items-center
+							.unit-left: span.icon.text-middle.mdi.mdi-phone
+							.unit-body: a(href='tel:#') 1-800-1234-567
+
+						li: .block-inline.unit.unit-spacing-xs.align-items-center
+							.unit-left: span.icon.text-middle.mdi.mdi-email-outline
+							.unit-body: a(href='mailto:#') office@demolink.org
+
+					.rd-navbar-aside-item
+						.block-inline: button.unit.unit-spacing-xs.align-items-center(data-rd-navbar-toggle='#navbar-login-register')
+							span.unit-left: span.icon.text-middle.mdi.mdi-login
+							span.unit-body: span Login/Register
+
+						.rd-navbar-popup.bg-gray-12(id='navbar-login-register')
+							// Bootstrap tabs
+							#navbar-tabs.tabs-custom.tabs-horizontal.tabs-line
+								// Nav tabs
+								ul.nav.nav-tabs
+									li.nav-item(role='presentation'): a.nav-link.active(href='#navbar-tabs-1' data-toggle='tab') Login
+									li.nav-item(role='presentation'): a.nav-link(href='#navbar-tabs-2' data-toggle='tab') Register
+
+								// Tab panes
+								.tab-content
+									div#navbar-tabs-1.tab-pane.fade.show.active
+										form.rd-form.form-1 
+											.form-wrap
+												input.form-input(id='navbar-login-email' type='email' name='email' data-constraints='@Email @Required')
+												label.form-label(for='navbar-login-email') E-mail
+
+											.form-wrap
+												input.form-input(id='navbar-login-password' type='password' name='password' data-constraints='@Required')
+												label.form-label(for='navbar-login-password') Password
+
+											.form-wrap
+												button.button.button-sm.button-primary.button-block(type='submit') Sign in
+
+									div#navbar-tabs-2.tab-pane.fade
+										form.rd-form.form-1
+											.form-wrap
+												input.form-input(id='register-name' type='text' name='username' data-constraints='@Required')
+												label.form-label(for='register-name') Username
+
+											.form-wrap
+												input.form-input(id='register-email' type='email' name='email' data-constraints='@Email @Required')
+												label.form-label(for='register-email') E-mail
+
+											.form-wrap
+												input.form-input(id='register-password' type='password' name='password' data-constraints='@Required')
+												label.form-label(for='register-password') Password
+
+											.form-wrap
+												input.form-input(id='register-password-confirm' type='password' name='password' data-constraints='@Required')
+												label.form-label(for='register-password-confirm') Confirm Password
+
+											.form-wrap
+												button.button.button-sm.button-primary.button-block(type='submit') Create an Account
+
+											.form-wrap
+												.text-decoration-lines
+													span.text-decoration-lines-content or enter with
+
+											.form-wrap
+												.button-group
+													a.button.button-facebook.button-icon.button-icon-only(href='#' aria-label='Facebook'): span.icon.mdi.mdi.mdi-facebook
+													a.button.button-twitter.button-icon.button-icon-only(href='#' aria-label='Twitter'): span.icon.mdi.mdi-twitter
+													a.button.button-google.button-icon.button-icon-only(href='#' aria-label='Google+'): span.icon.mdi.mdi-google
+
+			.rd-navbar-main-outer
+				.rd-navbar-main
+					// RD Navbar Panel
+					.rd-navbar-panel
+						// RD Navbar Toggle
+						button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap'): span
+
+						// RD Navbar Brand
+						.rd-navbar-brand
+							+logo
+
+					.rd-navbar-nav-wrap
+						include ../includes/_navigation
+						.rd-navbar-main-item
+							if(typeof obj !== 'undefined' && obj.customButton)
+								block
+							else
+								a.button.button-sm.button-primary(href='submit-property.html') Submit property

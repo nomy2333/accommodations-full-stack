@@ -1,0 +1,7 @@
+mixin block-agent(obj)
+  // Block Agent
+  a.block-agent(href=obj.link ? obj.link : 'agent-single-page.html')
+    +jpg(obj.img)
+    .block-agent-body
+      h3.block-agent-title=obj.title
+      p=obj.text
