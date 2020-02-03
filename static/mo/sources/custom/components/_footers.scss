@@ -1,0 +1,155 @@
+/*
+*
+* Footers
+*/
+
+//
+// Footer Classic
+//
+
+.right-1 {
+	font-weight: 500;
+	letter-spacing: .12em;
+	.icon {
+		position: relative;
+		top: 1px;
+		font-size: 16px;
+		margin-right: 2px;
+	}
+}
+
+.footer-classic {
+	padding: 20px 0;
+	
+	.rights {
+		letter-spacing: 0;
+		
+		a {
+			text-decoration: underline;
+		}
+	}
+}
+
+// Footer modern
+.footer-modern {
+	padding: 75px 0 50px;
+	
+	.row + hr { margin-top: 80px; }
+	hr + .row { margin-top: 40px; }
+	
+	.lefts {
+		&, 
+		&:focus, 
+		&:active {
+			color: $gray-27;
+		}
+		&:hover {
+			color: $secondary;
+		}
+	}
+	
+	p.rights {
+		a {
+			text-decoration: underline;
+		}
+	}
+	
+	&.bg-gray-31 {
+		p.rights {
+			color: $gray-27;
+			a {
+				color: inherit;
+				&:hover {
+				  color: $secondary;
+				}
+			}
+		}
+	}
+}
+
+// Footer static
+.pre-footer-static {
+	
+	h2 + p { margin-top: 20px;
+	}
+	
+	&,
+	&.bg-default {
+		p {
+			color: $gray-5;
+			letter-spacing: 0;
+		}
+	}
+	
+		@include media-breakpoint-up(lg) {
+		&-container {
+			position: relative;
+			&::before {
+			  content: '';
+				position: absolute;
+				top: 10px;
+				bottom: 30px;
+				left: 50%;
+				transform: translateX(-50%);
+				border-left: 1px solid $gray-10;
+			}
+		}
+	}
+}
+
+.footer-static {
+	text-align: center;
+	&.bg-gray-31 {
+		color: $gray-27;
+		
+		a {
+			text-decoration: underline;
+			&, 
+			&:focus, 
+			&:active {
+			  color: inherit;
+			}
+			&:hover {
+			  color: $secondary;
+			}
+		}
+	}
+}
+
+.footer-txt {
+	* + & {
+		margin-top: 15px;
+	}
+	
+		@include media-breakpoint-up(xl) {
+		* + & {
+			margin-top: 35px;
+		}
+	}
+}
+
+.bg-gray-31 {
+	.footer-txt {
+		color: $gray-27;
+	}
+}
+
+.bg-gray-21 {
+	.rights {
+		color: $gray-27;
+		
+		a {
+			&:hover {
+				color: $secondary;
+			}
+		}
+	}
+	
+	.right-1 {
+		a {
+			&:hover {
+				color: $secondary;
+			}
+		}
+	}
+}

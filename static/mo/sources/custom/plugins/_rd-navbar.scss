@@ -1,0 +1,206 @@
+/*
+*
+* RD Navbar
+*/
+
+//
+// RD Navbar variables
+//
+$navbar-static-nav-indent: 38px;
+
+$rd-navbar-min-font-size: 24px;
+$rd-navbar-min-line-height: 48px;
+$rd-navbar-min-height: 56px;
+
+$rd-navbar-color: $gray-700;
+$rd-navbar-background: $white;
+$rd-navbar-shadow: 0 0 22px -4px rgba(0, 0, 0, 0.17);
+$rd-navbar-border: 1px solid $gray-200;
+$rd-navbar-width: map-get($container-max-widths, xl) - $grid-gutter-width;
+
+// RD Navbar Panel
+$rd-navbar-panel-color: $rd-navbar-color;
+$rd-navbar-panel-background: $rd-navbar-background;
+
+// RD Navbar Nav
+$rd-navbar-nav-min-width: 270px;
+$rd-navbar-nav-color: $gray-13;
+$rd-navbar-nav-background: transparent;
+$rd-navbar-nav-hover-color: $primary;
+$rd-navbar-nav-hover-background: transparent;
+$rd-navbar-nav-active-color: $rd-navbar-nav-hover-color;
+$rd-navbar-nav-active-background: $rd-navbar-nav-hover-background;
+
+// RD Navbar Submenu
+$rd-navbar-submenu-background: $white;
+
+// RD Navbar Dropdown
+$rd-navbar-dropdown-width: 270px;
+$rd-navbar-dropdown-background: $white;
+$rd-navbar-dropdown-item-color: $gray-1;
+$rd-navbar-dropdown-item-background: transparent;
+$rd-navbar-dropdown-item-hover-color: $primary;
+$rd-navbar-dropdown-item-hover-background: transparent;
+$rd-navbar-dropdown-item-active-color: $rd-navbar-dropdown-item-hover-color;
+$rd-navbar-dropdown-item-active-background: $rd-navbar-dropdown-item-hover-background;
+
+// RD Navbar Megamenu
+$rd-navbar-megamenu-gutter: 30px;
+$rd-navbar-megamenu-background: $gray-12;
+$rd-navbar-megamenu-item-color: $black;
+$rd-navbar-megamenu-item-background: transparent;
+$rd-navbar-megamenu-item-hover-color: $primary;
+$rd-navbar-megamenu-item-hover-background: transparent;
+
+// RD Navbar toggles
+$rd-navbar-toggle-preset: "button-lines-arrow-2";
+$rd-navbar-toggle-border-radius: 0;
+$rd-navbar-collapse-toggle-preset: "collapse-preset-1";
+$rd-navbar-toggle-color: $gray-1;
+
+@import "rd-navbar_includes/_rd-navbar-mixins";
+
+// RD Navbar Basics
+%rd-navbar-transition {
+	transition: 0.35s all cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.rd-navbar--no-transition {
+	&, * {
+		transition: none !important;
+	}
+}
+
+.rd-navbar-wrap {
+	@extend %rd-navbar-transition;
+}
+
+.rd-navbar,
+.rd-navbar.rd-navbar--is-clone {
+	display: none;
+}
+
+.rd-navbar,
+.rd-menu,
+.rd-navbar-nav,
+.rd-navbar-panel {
+	@extend %rd-navbar-transition;
+}
+
+.rd-navbar.rd-navbar-fixed + .rd-navbar.rd-navbar--is-clone,
+.rd-navbar.rd-navbar-sidebar + .rd-navbar.rd-navbar--is-clone {
+	display: none;
+}
+
+// RD Navbar
+.rd-navbar {
+	display: none;
+	background: $rd-navbar-background;
+}
+
+// RD Navbar Toggle
+.rd-navbar-toggle {
+	@include make-toggle(
+			$rd-navbar-toggle-preset,
+			$rd-navbar-min-line-height,
+			$rd-navbar-min-font-size,
+			$border-radius,
+			$rd-navbar-toggle-color
+	);
+	background-color: transparent;
+	border: none;
+	display: none;
+}
+
+// RD Navbar Collapse
+.rd-navbar-collapse-toggle {
+	@include make-toggle(
+			$rd-navbar-collapse-toggle-preset,
+			$rd-navbar-min-line-height,
+			$rd-navbar-min-font-size,
+			$rd-navbar-toggle-border-radius,
+			$rd-navbar-panel-color
+	);
+	display: none;
+}
+
+// RD Navbar Brand
+.rd-navbar-brand {
+	a {
+		display: block;
+	}
+}
+
+.rd-nav-link {
+	display: block;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+	color: $rd-navbar-nav-color;
+}
+
+.rd-dropdown-link,
+.rd-megamenu-list-link {
+	display: block;
+}
+
+.rd-navbar-search-toggle {
+	@include reset-button;
+}
+
+// RD Navbar Popup
+.rd-navbar-popup {
+	position: absolute;
+	z-index: 12;
+	padding: 30px 25px;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: .2s;
+	overflow: hidden;
+	background: $white;
+	border: 1px solid $gray-14;
+
+	&.active {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+	}
+
+	.nav-tabs {
+		justify-content: center;
+	}
+
+	@include media-breakpoint-up(md) {
+		width: 370px;
+		padding: 40px 35px;
+	}
+}
+
+
+// RD Navbar Dropdown
+.rd-navbar-dropdown {
+	display: none;
+}
+
+// RD Navbar Megamenu
+.rd-megamenu-title {
+	font-family: $font-family-sec;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0;
+	color: $gray-1;
+}
+
+@import "rd-navbar_includes/rd-navbar-static";
+@import "rd-navbar_includes/rd-navbar-fixed";
+@import "rd-navbar_includes/rd-navbar-sidebar";
+
+// Themes
+@import "rd-navbar_includes/rd-navbar_themes/rd-navbar-classic";
+@import "rd-navbar_includes/rd-navbar_themes/rd-navbar-modern";
+@import "rd-navbar_includes/rd-navbar_themes/rd-navbar-corporate";
+
+
+

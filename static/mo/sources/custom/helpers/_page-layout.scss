@@ -1,0 +1,174 @@
+/*
+*
+* Page layout
+*/
+
+//
+// Page
+//
+.page {
+	position: relative;
+	overflow: hidden;
+	min-height: 100vh;
+	opacity: 0;
+
+	[data-x-mode] & {
+		opacity: 1;
+	}
+}
+
+.page-header {
+	position: relative;
+}
+
+//
+// Boxed Layout
+// 
+html.boxed {
+	body {
+		background: $page-boxed-background-color $page-boxed-background-image repeat fixed;
+	}
+
+	@media (min-width: $page-boxed-width + $grid-gutter-width) {
+		.page {
+			max-width: $page-boxed-width;
+			margin-left: auto;
+			margin-right: auto;
+			box-shadow: 0 0 23px 0 rgba(1, 1, 1, 0.1);
+		}
+
+		.rd-navbar-static {
+			max-width: $page-boxed-width;
+			margin-left: auto;
+			margin-right: auto;
+
+			&.rd-navbar--is-stuck {
+				max-width: $page-boxed-width;
+				width: 100%;
+				left: calc(50% - #{$page-boxed-width});
+				right: calc(50% - #{$page-boxed-width});
+			}
+		}
+	}
+}
+
+
+.one-page {
+	$top: 30px;
+	$bottom: 30px;
+	
+	$top-lg: 70px;
+	$bottom-lg: 50px;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	position: relative;
+	z-index: 1;
+	min-height: 100vh;
+	padding: ($top * 4.3) 0 ($bottom * 4.3);
+	text-align: center;
+	background-size: cover;
+	background-position: left center;
+	transition: 35s ease-out background-position;
+	
+	&-animate {
+	
+	}
+	
+	// Ie fix
+	[class*='ie-'] & {
+		height: 100vh;
+	}
+	
+	
+	&::before {
+	  content: '';
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		opacity: .51;
+		background-color: #172039;
+		pointer-events: none;
+	}
+	
+	&-header,
+	&-footer {
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+	
+	&-header {
+		position: absolute;
+		top: 0;
+		padding-top: $top;
+	}
+	
+	&-main {
+		width: 100%;
+		
+		.rd-form-inline {
+			justify-content: center;
+		}
+	}
+	
+	&-footer {
+		bottom: 0;
+		padding-bottom: $bottom;
+		letter-spacing: 0;
+		color: $white;
+		a {
+			text-decoration: underline;
+			&, 
+			&:focus, 
+			&:active {
+			  color: $white;
+			}
+			&:hover {
+			  color: $primary;
+			}
+		}
+	}
+	
+	.form-label,
+	.form-input {
+		color: $white;
+		letter-spacing: 0;
+	}
+	
+	.form-input {
+		color: $white;
+		background-color: rgba($white, .47);
+		border-color: rgba($white, .1);
+	}
+	
+	h4 + * {
+		margin-top: 40px;
+	}
+	
+	h4 + h2 {
+		margin-top: 15px;
+	}
+	
+	.desktop &-animate:hover {
+		background-position: right center;
+	}
+	
+		@include media-breakpoint-up(xl) {
+		padding: ($top-lg * 3) 0 ($bottom-lg * 3);
+		
+		
+		&-header {
+			padding-top: $top-lg;
+		}
+		
+		&-footer {
+			padding-bottom: $bottom-lg;
+		}
+	}
+}

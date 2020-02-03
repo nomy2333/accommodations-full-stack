@@ -1,0 +1,558 @@
+/*
+*
+* Blocks
+*/
+
+%block-center {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+// The block element can be centered horizontally
+//
+.block-center {
+  @extend %block-center;
+}
+
+// Limits block width and block element can be centered horizontally
+//
+.block-sm {
+  @extend %block-center;
+  max-width: 560px;
+}
+
+.block-lg {
+  @extend %block-center;
+  max-width: 768px;
+}
+
+.mw-none {
+  max-width: none;
+}
+
+$max-width-list: 500, 510, 540, 580, 650, 675, 700;
+@each $max-width in $max-width-list {
+  .mw-#{$max-width} {
+    max-width: $max-width + px;
+  }
+}
+
+// Agents
+.block-agent {
+  display: block;
+  max-width: 410px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: $white;
+  letter-spacing: 0;
+  color: $gray-20;
+  box-shadow: 0 10px 5.76px 0.24px rgba(0, 0, 0, 0.11);
+  transform: translateY(0px);
+  transition: all 0.4s cubic-bezier(0.39, 0.58, 0.57, 1);
+
+  &-body {
+    padding: 20px 5px 30px;
+  }
+
+  &-title {
+    transition: .3s ease-out all;
+  }
+
+  &-title + * {
+    margin-top: 5px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    &-body {
+      padding: 30px 5px 50px;
+    }
+  }
+
+  &:hover {
+    color: $gray-20;
+    transform: translateY(-14px);
+    .block-agent-title {
+      color: $primary;
+    }
+  }
+}
+
+.block-agent-horizontal {
+  background-color: $white;
+  box-shadow: 0 10px 5.76px 0.24px rgba(0, 0, 0, 0.11);
+  display: block;
+  text-align: center;
+  letter-spacing: 0;
+  color: $gray-20;
+  transform: translateY(0px);
+  transition: all 0.4s cubic-bezier(0.39, 0.58, 0.57, 1);
+
+  &-body {
+    padding: 20px 10px;
+  }
+
+  &-title {
+    transition: .3s ease-out all;
+  }
+
+  &-title + * {
+    margin-top: 5px;
+  }
+
+  &-divider {
+    line-height: 0;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 166px;
+      height: 1px;
+      background-color: $gray-14;
+    }
+  }
+
+  * + &-divider,
+  &-divider + * {
+    margin-top: 13px;
+  }
+
+  .icon {
+    font-size: 19px;
+    color: $primary;
+    vertical-align: middle;
+
+    & + * {
+      margin-left: 10px;
+    }
+  }
+
+  a {
+    display: inline-block;
+    &, 
+    &:focus,
+    &:active {
+      color: $gray-21;
+    }
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    &-image {
+      position: relative;
+      width: 38%;
+      align-self: stretch;
+      flex-shrink: 0;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 101%;
+        width: 101%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    &-body {
+      padding: 45px 40px;
+      flex-grow: 1;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    &-body {
+      padding: 66px 50px;
+    }
+
+    * + &-divider,
+    &-divider + * {
+      margin-top: 20px;
+    }
+  }
+
+  &:hover {
+    color: $gray-20;
+    transform: translateY(-14px);
+  }
+}
+
+// Block info
+.block-info {
+  padding: 30px 20px;
+  background-color: $white;
+
+  .bg-white & {
+    background-color: $gray-12;
+  }
+
+  // Medium ≥576px
+  @include media-breakpoint-up(lg) {
+    padding: 47px 40px;
+  }
+}
+
+.block-info-1 {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: $white;
+  text-align: center;
+
+  > li {
+    + li {
+      margin-top: 10px;
+    }
+  }
+
+  // Medium ≥576px
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    > li {
+      + li {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .bg-white & {
+    background-color: $gray-12;
+  }
+}
+
+* + .block-info { margin-top: 30px; }
+
+@include media-breakpoint-up(xl) {
+  * + .block-info { margin-top: 50px; }
+}
+
+.block-info-2 {
+  &-title {
+    padding-bottom: 14px;
+    border-bottom: 1px solid $gray-14;
+    > * {
+      font-family: $font-family-sec;
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $gray-1;
+    }
+  }
+
+  .form-select {
+    .form-input {
+      border-color: transparent;
+    }
+  }
+
+  &-title + *,
+  &-title + .post-minimal-1,
+  &-title + .form-select { margin-top: 30px; }
+}
+
+// Block person
+.block-person {
+  padding: 21px 18px;
+  letter-spacing: 0;
+  text-align: left;
+  background-color: $white;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  &-list {
+    > li {
+      padding: 16px 5px;
+      + li {
+        border-top: 1px solid $gray-15;
+      }
+    }
+
+    > li:first-child {
+      border-top: 1px solid $gray-15;
+    }
+
+    > li:last-child {
+      border-bottom: 1px solid $gray-15;
+    }
+  }
+
+  &-body {
+    padding-top: 15px;
+  }
+
+  &-link {
+    color: $gray-21;
+
+    a {
+      &, &:focus, &:active {
+        color: $gray-21;
+      }
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    .icon {
+      margin-right: 10px;
+      vertical-align: middle;
+      font-size: 19px;
+      color: $primary;
+    }
+  }
+
+  a.icon[class*='fa-'] {
+    &, &:focus, &:active {
+      color: $gray-13;
+    }
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &-title + * { margin-top: 5px; }
+  &-cite + * { margin-top: 20px; }
+  &-list + * { margin-top: 25px; }
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+
+    &-left {
+      flex-basis: 48%;
+      flex-shrink: 0;
+    }
+
+    &-body {
+      flex-grow: 1;
+      padding: 7px 15px 0 20px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 41px 44px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 31px 24px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 41px 44px;
+    &-body {
+      padding: 7px 15px 0 38px;
+    }
+  }
+}
+
+// Block
+.block-callboard {
+  padding: 12px 11px;
+  color: $lightblue-1;
+  letter-spacing: 0;
+  background-color: $primary;
+
+  a {
+    &, &:focus, &:active {
+      color: $white;
+    }
+    &:hover {
+      color: $secondary;
+    }
+  }
+
+  &-title {
+    color: $white;
+  }
+
+  &-divider {
+    width: 100%;
+    height: 3px;
+    line-height: 0;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 48px;
+      line-height: 0;
+      border-top: 3px solid $secondary;
+    }
+  }
+
+  &-list {
+    > li {
+      + li {
+        margin-top: 25px;
+      }
+    }
+  }
+
+  &-tell,
+  &-mail {
+    position: relative;
+    padding-left: 42px;
+    font-family: $font-family-sec;
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: block;
+      width: 32px;
+      height: 32px;
+      font-size: 16px;
+      line-height: 32px;
+      text-align: center;
+      color: $gray-1;
+      background-color: $secondary;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &-tell {
+    padding-left: 38px;
+    &::before {
+      content: '\e0b0';
+      font-family: 'Material Icons';
+    }
+  }
+
+  &-mail {
+    &::before {
+      content: '\f2e5';
+      font-family: 'Material Design Icons';
+    }
+  }
+
+  &-text {
+    padding-right: 10px;
+    color: rgba($white, .6);
+  }
+
+  &-body {
+    padding: 29px 15px 40px;
+    border: 1px solid rgba($white, .35);
+  }
+
+  .button-secondary {
+    @include btn-variant($white, transparent, $white, $gray-1, $secondary, $secondary);
+  }
+
+  * + &-divider { margin-top: 20px; }
+  &-divider + * { margin-top: 25px; }
+  * + &-list { margin-top: 23px; }
+  &-list + *,
+  &-list + .button { margin-top: 35px; }
+
+  @include media-breakpoint-up(xl) {
+
+    &-body {
+      padding: 39px 26px 50px;
+    }
+
+    &-tell,
+    &-mail {
+      line-height: 24px;
+      &::before {
+        font-size: 19px;
+      }
+    }
+
+    &-tell {
+      font-size: 18px;
+    }
+
+    &-mail {
+      font-size: 16px;
+      letter-spacing: .05em;
+    }
+  }
+}
+
+// Block Property
+.block-property {
+  padding: 30px;
+  background-color: $white;
+
+  @include media-breakpoint-up(lg) {
+    padding: 56px 67px 40px 67px;
+  }
+}
+
+// Block Group
+* + .block-group-item { margin-top: 35px; }
+
+@include media-breakpoint-up(md) {
+  * + .block-group-item { margin-top: 50px; }
+}
+
+@include media-breakpoint-up(xl) {
+  * + .block-group-item { margin-top: 63px; }
+}
+
+// Block Inline
+.block-inline {
+  line-height: 1.1;
+  .icon {
+    position: relative;
+    top: 1px;
+    font-size: 18px;
+    color: $primary;
+  }
+
+  button {
+    @include reset-button;
+    display: inline-flex;
+  }
+
+  a, button {
+    letter-spacing: .1em;
+    transition: .22s;
+    &,
+    &:active,
+    &:focus {
+      color: $gray-1;
+    }
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+//
+// Block 1
+//
+div.block-1 {
+  padding-top: 60px;
+  width: 470px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media-breakpoint-up(md) {
+    width: 650px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding-left: 35px;
+    margin-left: 0;
+  }
+}

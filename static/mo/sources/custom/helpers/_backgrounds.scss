@@ -1,0 +1,120 @@
+/*
+*
+* Backgrounds
+*/
+
+.context-dark {
+	@extend %context-dark;
+}
+
+%context-dark {
+	&,
+	#{headings()} {
+		color: $white;
+	}
+
+	// Logo
+	.brand {
+		.brand-logo-dark { display: none; }
+		.brand-logo-light { display: block; }
+	}
+}
+
+%context-light {
+	color: $body-color;
+
+	#{headings()} {
+		color: $headings-color;
+	}
+
+	// Logo
+	.brand {
+		.brand-logo-dark { display: block; }
+		.brand-logo-light { display: none; }
+	}
+}
+
+/**
+* Light Backgrounds
+*/
+.bg-default {
+	@include bg-behaviour($body-bg);
+}
+
+
+/**
+* Dark Backgrounds
+*/
+
+
+/** 
+* Accent Backgrounds
+*/
+
+$bg-list: (
+	 accent: $primary,
+	 primary-lighten: $primary-lighten,
+	 gray-8: $gray-8,
+	 gray-10: $gray-10,
+	 gray-12: $gray-12,
+	 gray-14: $gray-14,
+	 gray-16: $gray-16, 
+	 gray-21: $gray-21,
+	 gray-31: $gray-31,
+	 secondary: $secondary,
+	 darkblue-2: $darkblue-2,
+);
+
+@each $bg-name, $bg-code in $bg-list {
+	.bg-#{$bg-name} {
+		background-color: #{$bg-code};
+		& + & {
+			padding-top: 0;
+		}
+	}
+}
+ 
+.bg-accent { 
+	@extend %context-dark;
+	
+	.heading-7 {
+		color: $lightblue-1;
+	}
+	
+	div.owl-dot {
+		&::before {
+			background: $secondary;
+		}
+		
+		&:hover,
+		&.active {
+			border-color: $white;
+			
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+/**
+* Background Image
+*/
+.bg-image {
+
+}
+
+[class*='bg-'] {
+	background-size: cover;
+	background-position: center center;
+}
+
+// Desktop only
+//
+html:not(.tablet):not(.mobile) {
+	.bg-fixed {
+		@include media-breakpoint-up(lg) {
+			background-attachment: fixed;
+		}
+	}
+}

@@ -1,0 +1,45 @@
+/*
+*
+* Images
+*/
+
+// Standard img style
+img {
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+}
+
+.img-responsive {
+	width: 100%;
+}
+
+.img-round {
+	border-radius: 50%;
+}
+
+.image-block-1 {
+	display: flex;
+	width: 100%;
+	background-size: cover;
+	background-position: center center;
+	&::after {
+		content: '';
+		display: block;
+		width: 100%;
+		padding-bottom: (535 / 599) * 100%;
+	}
+}
+
+.image-block-2 {
+	display: flex;
+	width: 100%;
+	background-size: cover;
+	background-position: center center;
+	&::after {
+		content: '';
+		display: block;
+		width: 100%;
+		padding-bottom: (426 / 571) * 100%;
+	}
+}

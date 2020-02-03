@@ -1,0 +1,216 @@
+/*
+*
+* Google Maps
+*/
+.google-map-markers {
+  display: none;
+}
+
+.google-map-container {
+  width: 100%;
+}
+
+.google-map {
+  width: 100%;
+  height: $map-height;
+
+  @include media-breakpoint-up(sm) {
+    height: $map-sm-height;
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: $map-lg-height;
+  }
+
+  @include media-breakpoint-up(xl) {
+    height: $map-xl-height;
+  }
+}
+
+.google-map-1 {
+  @include media-breakpoint-up(md) {
+    height: 370px;
+  }
+}
+
+.google-map-2 {
+  @include media-breakpoint-up(xl) {
+    height: 570px;
+  }
+}
+
+.google-map-3 {
+  @include media-breakpoint-up(md) {
+    height: 500px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    height: 680px;
+  }
+}
+
+.google-map-4 {
+  height: 340px;
+
+  @include media-breakpoint-up(md) {
+    height: 450px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    height: 680px;
+  }
+}
+
+.gm-style-iw {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $headings-color;
+}
+
+.google-map-container_product-classic-2 {
+  .google-map {
+    min-height: 470px;
+  }
+
+  .product-classic {
+    width: 100%;
+    padding: 25px 23px 21px;
+
+    .product-classic-list {
+      font-size: 14px; 
+    }
+
+    &:hover {
+      box-shadow: none;
+
+      .product-classic-media {
+        img {
+          transform: none;
+        }
+      }
+    }
+  }
+
+  .product-classic-list {
+    padding-right: 0;
+  }
+
+  * + .product-classic-list {
+    margin-top: 24px;
+  }
+
+  .gm-style-iw {
+    width: 100% !important;
+    left: 1px !important;
+    
+    > div {
+      width: 100% !important;
+    }
+  }
+
+  .gm-style > div > div > div > div > div:first-child {
+    width: 300px !important;
+
+    > div > div:nth-child(2),
+    > div > div:nth-child(4) {
+      width: 100% !important;
+    }
+  }
+
+  .gm-style-pbc + div > div > div:nth-child(4) > div > div:nth-child(1) {
+    margin-top: -14px;
+  }
+
+  .gm-style-iw + div {
+    top: 9px !important;
+    right: -1px !important;
+    height: 30px !important;
+    width: 30px !important;
+    font-size: 18px;
+    line-height: 30px;
+    background: $secondary;
+    color: $gray-1;
+    transition: .22s;
+    opacity: 1 !important;
+    text-align: center;
+
+    &::before {
+      content: '\f69a';
+      font-family: 'Material Design Icons';
+    }
+
+    &:hover {
+      color: $white;
+      background: $primary;
+    }
+
+    img {
+      display: none;
+    }
+  }
+
+  @media (min-width: 400px) {
+    .gm-style > div > div > div > div > div:first-child {
+      width: 370px !important;
+    }
+  }
+
+}
+
+.google-map-container_product-light {
+  @include media-breakpoint-down(sm) {
+    .google-map {
+      height: 340px;
+    }
+  }
+  .gm-style-iw {
+    width: 100% !important;
+    left: 1px !important;
+    
+    > div {
+      width: 100%;
+    }
+  }
+
+  .gm-style > div > div > div > div > div:first-child {
+    width: 250px !important;
+
+    > div > div:nth-child(2),
+    > div > div:nth-child(4) {
+      width: 100% !important;
+    }
+  }
+
+  .gm-style-pbc + div > div > div:nth-child(4) > div > div:nth-child(1) {
+    margin-top: -13px;
+  }
+
+  .gm-style-iw + div {
+    top: 9px !important;
+    right: -1px !important;
+    height: 30px !important;
+    width: 30px !important;
+    font-size: 18px;
+    line-height: 30px;
+    background: $secondary;
+    color: $gray-1;
+    transition: .22s;
+    opacity: 1 !important;
+    text-align: center;
+
+    &::before {
+      content: '\f69a';
+      font-family: 'Material Design Icons';
+    }
+
+    &:hover {
+      color: $white;
+      background: $primary;
+    }
+
+    img {
+      display: none;
+    }
+  }
+}

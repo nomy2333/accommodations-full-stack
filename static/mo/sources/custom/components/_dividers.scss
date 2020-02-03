@@ -1,0 +1,75 @@
+/*
+*
+* Dividers
+*/
+
+hr {
+	margin-top: 0;
+	margin-bottom: 0;
+	border-top: $hr-border-width solid $hr-border-color;
+	
+
+	
+	.bg-gray-31 & {
+		border-top-color: rgba($white, .12);
+	}
+}
+
+html .page {
+	.divider-secondary {
+		background-color: transparent;
+		&::after {
+			background: $secondary;
+		}
+	}
+}
+
+.divider {
+	font-size: 0;
+	line-height: 0;
+	
+	&::after {
+		content: '';
+		display: inline-block;
+		width: 65px;
+		height: 2px;
+		background-color: $primary;
+	}
+	
+	& + * { margin-top: 20px; }
+}
+
+
+.divider-section {
+	width: 100%;
+	height: 1px;
+	background-color: $gray-14;
+	
+	&.bg-gray-16 {
+		background-color: $gray-16;
+	}
+}
+
+.divider-small {
+	&::after {
+		content: '';
+		display: inline-block;
+		width: 180px;
+		height: 1px;
+		background-color: $body-color;
+	}
+}
+
+%context-dark {
+	.divider-small {
+		&::after {
+			background: rgba($white, .28);
+		}
+	}
+}
+
+* + .divider-small { margin-top: 5px; }
+
+@include media-breakpoint-up(sm) {
+	* + .divider-small { margin-top: 15px; }
+}

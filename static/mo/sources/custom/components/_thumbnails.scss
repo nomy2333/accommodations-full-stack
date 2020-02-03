@@ -1,0 +1,105 @@
+/*
+*
+* Thumbnails
+*/
+
+// 
+// Table of Contents
+// 
+// Figure Light
+//
+
+//
+// Figure Light
+//
+.figure-light figcaption {
+	padding-top: 10px;
+	color: $gray-400;
+}
+
+
+// 
+// Thumbnail Indigo
+//
+.thumbnail-indigo {
+	position: relative;
+	overflow: hidden;
+	display: block;
+	background: $gray-700;
+	box-shadow: -1px 1px 21px 0px rgba($black, .08);
+	background-position: center top;
+	background-size: cover;
+
+	&::before {
+		content: '';
+		display: block;
+		opacity: 0;
+		visibility: hidden;
+		padding-bottom: (500 / 400) * 100%;
+	}
+}
+
+.thumbnail-indigo-sm {
+	&::before {
+		padding-bottom: (300 / 400) * 100%;
+	}
+}
+
+.thumbnail-indigo-sm + .thumbnail-indigo-sm { margin-top: 7.4%; }
+
+
+.thumbnail-indigo-caption {
+	position: absolute;
+	top: auto;
+	right: 0; 
+	bottom: -1px;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	background: rgba($white, .95);
+}
+
+@include media-breakpoint-down(xs) {
+  .thumbnail-indigo {
+		max-width: 370px;
+		margin-left: auto;
+		margin-right: auto;
+	} 
+}
+
+@include media-breakpoint-up(lg) {
+	html:not(.tablet):not(.mobile) {
+		.thumbnail-indigo-caption {
+			top: 0;
+			background: rgba($white, .9);
+		}
+
+		.thumbnail-indigo-caption,
+		.thumbnail-indigo-caption > * {
+			opacity: 0;
+			visibility: hidden;
+			will-change: opacity;
+		}
+
+		.thumbnail-indigo-caption {
+			transition: .22s;
+		}
+
+		.thumbnail-indigo-caption > * {
+			transition: .22s .01s all ease-in;
+		}
+
+		.thumbnail-indigo {
+			&:hover {
+				.thumbnail-indigo-caption,
+				.thumbnail-indigo-caption > * {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	} 
+}
+

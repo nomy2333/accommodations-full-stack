@@ -1,0 +1,28 @@
+/*
+*
+* Tooltop Custom
+*/
+
+//
+// Base class
+//
+.tooltip {
+	font-size: $font-size;
+	line-height: 1.2;
+
+	.arrow {
+		&::before {
+			border-top-color: $primary !important;
+			border-bottom-color: $primary !important;
+		}
+	}
+	
+	&-inner {
+		background-color: $primary !important;
+	}
+	
+	&-custom[data-toggle='tooltip'] {
+		color: $gray-6;
+	}
+}
+

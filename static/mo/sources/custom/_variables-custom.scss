@@ -1,0 +1,429 @@
+// Variables
+//
+// Copy settings from this file into the provided `_custom.scss` to override
+// the Bootstrap defaults without modifying key, versioned files.
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+//
+// Temporary, used for calculation variables should by named `$_variable-name`
+//
+// Table of Contents
+//
+// Color system
+// Body
+// Page
+// Components
+// Fonts
+// Links
+// Z-index master list
+// Grid breakpoints
+// Grid containers
+// Grid columns
+// Buttons
+// Form
+// Pagination 
+// Tooltips
+
+//
+// Color system
+//
+
+// Gray colors default
+$white: #ffffff;
+$black: #000000;
+
+// Gray colors custom
+$gray-1: #151515;
+$gray-2: #424445;
+$gray-3: #1c1c1c;
+$gray-4: #2f3032;
+$gray-5: #9b9b9b;
+$gray-6: #b7b7b7;
+$gray-7: #c8d1e1;
+$gray-8: #c2d3f2;
+$gray-9: #d3d4da;
+$gray-10: #e0e0e0;
+$gray-11: #ebebeb;
+$gray-12: #f3f4f9;
+$gray-13: #0d0d0d;
+$gray-14: #e1e1e1;
+$gray-15: #d7d7d7;
+$gray-16: #f5f5f5;
+$gray-17: #b8b8b6;
+$gray-18: #fcfcfc;
+$gray-19: #888a8c;
+$gray-20: #9c9c9c;
+$gray-21: #2a2e3d; 
+$gray-22: #e3e3e3;
+$gray-23: #323640; 
+$gray-24: #ccc;
+$gray-25: #e7e9f0;
+$gray-26: #ddd;
+$gray-27: #6d7593;
+$gray-28: #9fa3a7;
+$gray-29: #7f879a;
+$gray-30: #454a5f;
+$gray-31: #2f3446;
+$gray-32: #abb4c0;
+
+
+$darkblue: #0a3d8f;
+$darkblue-1: #2e549a; 
+$darkblue-2: #27527c; 
+$darkblue-3: #496ca4;
+
+$lightblue: #b2ccf7;
+$lightblue-1: #9cc1ff;
+
+$facebook: #4477bb;
+$google: #f06976;
+$twitter: #69bff0;
+$pinterest: #e46868;
+
+//
+// Body 
+//
+$body-bg: $white;
+$body-color: #9a9a9a;
+
+
+// Accent colors
+$primary: #4b9ef1; 
+$secondary: #fdde52;
+ 
+$primary-lighten: darken(desaturate(adjust_hue($primary, 7.0909090909090935), 32.68239492466296%), 2.7450980392156836%); // #608ace
+$primary-darken: darken(desaturate(adjust_hue($primary, 0.2127659574468055), 24.52804927031731%), 7.254901960784316%);
+$primary-darken-1: darken(desaturate(adjust_hue($primary, -0.5806451612903345), 21.251657612182896%), 9.2156862745098%); // #3988d4
+
+$theme-colors: map-merge(
+	$theme-colors,
+	(
+		"primary":   $primary,
+		"secondary": $secondary
+	)
+);
+
+$danger-color: #f5543f;
+$success-color: #98bf44;
+
+
+// Additional colors
+$facebook: #547abb;
+$facebook-light: #748abc;
+$facebook-darken: darken($facebook, 5%);
+
+$twitter: #44c0f3;
+$twitter-light: #81cbdb;
+$twitter-darken: darken($twitter, 5%);
+
+$google: #e75854;
+$google-light: #de7272; 
+$google-darken: darken($google, 5%);
+
+//
+// Page
+//
+$page-boxed-width: 1600px;
+$page-boxed-background-color: $gray-100;
+$page-boxed-background-image: url(../images/bg-pattern-boxed.png);
+
+//
+// Components
+//
+// Define common padding and border radius sizes and more.
+$border-width: 1px;
+
+$border-radius: 0;
+$border-radius-lg: .3rem;
+$border-radius-sm: .2rem;
+
+$transition-base: all .3s ease-in-out;
+
+// Map
+//
+$map-height: 200px;
+$map-sm-height: 250px;
+$map-lg-height: 400px;
+$map-xl-height: 450px;
+
+// Custom
+$shadow-area-1: -3px 0px 50px -2px rgba(0, 0, 0, 0.09);
+$shadow-area-2: 1px 1px 10px 0 rgba(0, 0, 0, 0.2);
+
+//
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-family-sans-serif: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-sans-serif-1: 'Poppins', sans-serif;
+$font-family-serif: "Roboto Slab", "Times New Roman", Times, serif;
+$font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+$font-family-base: $font-family-sans-serif;
+$font-family-sec: $font-family-sans-serif-1;
+
+$font-weight-bold: 700;
+
+// Base fonts
+$font-size: 14px;
+$font-size-lg: 16px;
+$font-size-sm: 12px;
+
+$_lh-base: 24px;
+$_lh-lg: 26px;
+$_lh-sm: 18px;
+
+$font-weight-base: 400;
+
+// ** < Calculated font values >
+$line-height-base: ($_lh-base / $font-size);
+$line-height-lg: ($_lh-lg / $font-size-lg);
+$line-height-sm: ($_lh-sm / $font-size-sm);
+// ** </ Calculated font values >
+
+// Headings
+$headings-font-family: inherit;
+$headings-font-weight: 400;
+$headings-line-height: 1.2;
+$headings-color: $gray-1;
+
+// Template Heading Values
+$_h1-fsz: 70;
+$_h2-fsz: 40;
+$_h3-fsz: 24;
+$_h4-fsz: 18;
+$_h5-fsz: 16;
+$_h6-fsz: 14;
+
+$_h1-lh: 84;
+$_h2-lh: 48;
+$_h3-lh: 29;
+$_h4-lh: 25;
+$_h5-lh: 24;
+$_h6-lh: 24;
+
+// ** < Calculated Headings values >
+$h1-font-size: $_h1-fsz * 1px;
+$h2-font-size: $_h2-fsz * 1px;
+$h3-font-size: $_h3-fsz * 1px;
+$h4-font-size: $_h4-fsz * 1px;
+$h5-font-size: $_h5-fsz * 1px;
+$h6-font-size: $_h6-fsz * 1px;
+
+$h1-line-height: ($_h1-lh / $_h1-fsz);
+$h2-line-height: ($_h2-lh / $_h2-fsz);
+$h3-line-height: ($_h3-lh / $_h3-fsz);
+$h4-line-height: ($_h4-lh / $_h4-fsz);
+$h5-line-height: ($_h5-lh / $_h5-fsz);
+$h6-line-height: ($_h6-lh / $_h6-fsz);
+// ** </ Calculated Headings values >
+
+// Icon Fonts
+$fa: 'FontAwesome';
+$mdi: 'Material Design Icons';
+$mi: 'Material Icons';
+
+// Lead
+$lead-font-size: 24px;
+$lead-line-height: 34px;
+$lead-font-weight: 300;
+
+// Hr
+$hr-border-color: $gray-200;
+$hr-border-width: $border-width;
+
+// Mark
+$mark-padding: 5px 10px;
+$mark-bg: $primary;
+
+$dt-font-weight: inherit;
+$list-inline-padding: 5px;
+
+// Code
+$code-font-size: 90%;
+$code-padding-y: 10px;
+$code-padding-x: 5px;
+$code-color: $gray-900;
+$code-bg: $gray-100;
+
+//
+// Links
+//
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-color: darken($link-color, 15%);
+$link-press-color: darken($link-color, 15%);
+$link-hover-decoration: underline;
+
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+
+$zindex-dropdown: 1000;
+$zindex-sticky: 1020;
+$zindex-fixed: 1030;
+$zindex-modal-backdrop: 1040;
+$zindex-modal: 1050;
+$zindex-popover: 1060;
+$zindex-tooltip: 1070;
+// Custom
+$zindex-rd-navbar: 1080;
+$zindex-layout-panel: 1100;
+
+//
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1600px
+);
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+$screen-fullhd: 1600px;
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1200px
+);
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+//
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+$grid-gutter-width-narrow: 30px;
+
+//
+// Buttons
+//
+
+$input-btn-padding-y: 14px;
+$input-btn-padding-x: 35px;
+$input-btn-font-size: 14px;
+$input-btn-line-height: 1.25;
+
+$input-btn-padding-y-sm: 9px;
+$input-btn-padding-x-sm: 29px;
+$input-btn-line-height-sm: 1.5;
+
+$input-btn-padding-y-lg: 16px;
+$input-btn-padding-x-lg: 65px;
+$input-btn-line-height-lg: 1.5;
+
+$btn-font-family: $font-family-sec;
+$btn-font-weight: 600;
+$btn-letter-spacing: .05em;
+$btn-text-transform: uppercase;
+
+$btn-box-shadow: 0;
+$btn-focus-box-shadow: 0;
+$btn-active-box-shadow: 0;
+
+$btn-link-disabled-color: $gray-600;
+
+$btn-block-spacing-y: .5rem;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius: $border-radius;
+$btn-border-radius-lg: $border-radius-lg;
+$btn-border-radius-sm: $border-radius-sm;
+
+$btn-transition: all .15s ease-in-out;
+
+//
+// Forms
+//
+$form-input-height: 50px;
+$form-input-lg-height: 60px;
+$form-input-sm-height: 40px;
+
+$form-input-color: $gray-1;
+$form-input-color-placeholder: $form-input-color;
+
+$form-input-background: $gray-12;
+$form-input-border-color: $form-input-background;
+$form-input-border-radius: $border-radius;
+
+$form-input-font-size: 14px;
+$form-input-line-height: 24px;
+$form-input-font-weight: 400;
+
+$form-input-border: 1px solid $form-input-border-color;
+$form-input-padding-horizontal: 19px;
+$form-input-line-height: round($form-input-font-size * 1.7);
+
+$form-input-padding-vertical: round(($form-input-height - $form-input-line-height) / 2) + 1px;
+$form-input-padding: $form-input-padding-vertical $form-input-padding-horizontal;
+
+@if ($form-input-border != none) {
+	$form-input-padding-vertical: round(($form-input-height - $form-input-line-height - (nth($form-input-border, 1) * 2)) / 2);
+	$form-input-padding: $form-input-padding-vertical $form-input-padding-horizontal;
+}
+
+$form-textarea-default-height: 135px;
+$form-textarea-default-min-height: $form-input-height;
+$form-textarea-default-max-height: round($form-textarea-default-height * 1.7);
+
+$form-feedback-focus-color: $primary;
+$form-feedback-valid-color: $success-color;
+$form-feedback-invalid-color: $danger-color;
+
+//
+// Pagination
+//
+$pagination-padding-y: 10px;
+$pagination-padding-x: 10px;
+$pagination-font-size: 14px;
+$pagination-line-height: 24px;
+
+$pagination-color: $gray-500;
+$pagination-bg: $white;
+$pagination-border-width: 2px;
+$pagination-border-color: $gray-200;
+
+$pagination-hover-color: $white;
+$pagination-hover-bg: $primary;
+$pagination-hover-border-color: $primary;
+
+$pagination-active-color: $white;
+$pagination-active-bg: $primary;
+$pagination-active-border-color: $primary;
+
+$pagination-disabled-color: $gray-400;
+$pagination-disabled-bg: $gray-200;
+$pagination-disabled-border-color: $gray-200;
+
+//
+// Tooltips
+//
+$tooltip-max-width: 200px;
+$tooltip-color: $white;
+$tooltip-bg: $primary;
+$tooltip-opacity: 1;
+$tooltip-padding-y: 6px;
+$tooltip-padding-x: 10px;
+$tooltip-margin: 0;
+
+$tooltip-arrow-width: 6px;
+$tooltip-arrow-height: 6px;
+$tooltip-arrow-color: $tooltip-bg;
+
+

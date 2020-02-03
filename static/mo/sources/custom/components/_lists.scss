@@ -1,0 +1,603 @@
+/*
+*
+* Lists
+*/
+
+// Vertical list
+.list {
+	> li + li {
+		margin-top: 10px;
+	}
+}
+
+.list-xs > li + li {
+	margin-top: 5px;
+}
+
+.list-sm > li + li {
+	margin-top: 10px;
+}
+
+.list-md > li + li {
+	margin-top: 18px;
+}
+
+.list-lg > li + li {
+	margin-top: 25px;
+}
+
+@include media-breakpoint-up(md) {
+	.list-xl > li + li {
+		margin-top: 60px;
+	}
+}
+
+//
+// List inline
+//
+.list-inline {
+	> li {
+		display: inline-block;
+	}
+}
+
+html {
+	.list-inline-sm {
+		@include spacing(16px, 8px);
+	}
+}
+
+* + .list-inline-sm { margin-top: 20px; }
+
+@include media-breakpoint-up(md) {
+	* + .list-inline-sm { margin-top: 30px; }
+}
+
+.list-inline-1 {
+	@include spacing(13px, 8px);
+
+	> li {
+		display: inline-block;
+	}
+
+	* + & {
+		margin-top: 10px;
+	}
+
+	.link-with-icon + & {
+		margin-top: 15px;
+	}
+
+	.rd-form-inline-1 + & {
+		margin-top: 15px;
+	}
+
+	@include media-breakpoint-up(xl) {
+
+		.link-with-icon + & {
+			margin-top: 30px;
+		}
+
+		.rd-form-inline-1 + & {
+			margin-top: 24px;
+		}
+	}
+}
+
+//
+// List terms
+//
+.list-terms {
+	dt + dd { margin-top: 10px; }
+	dd + dt { margin-top: 25px; }
+
+	@include media-breakpoint-up(md) {
+		dt + dd { margin-top: 15px; }
+		dd + dt { margin-top: 50px; }
+	}
+}
+
+* + .list-terms { margin-top: 25px; }
+
+// 
+// List Terms 1
+//
+.list-terms-1 {
+	max-width: 350px;
+	letter-spacing: 0;
+
+	dt {
+		color: $gray-13;
+	}
+
+	dd {
+		display: flex;
+		align-items: flex-start;
+		font-family: $font-family-sec;
+		font-size: 16px;
+		line-height: (30 / 18);
+		letter-spacing: .1em;
+
+		> * + * {
+			display: inline-block;
+			vertical-align: top;
+			margin-left: 5px;
+		}
+
+		a {
+			line-height: 1.45;
+
+			&,
+			&:active,
+			&:focus {
+				color: $gray-1;
+			}
+
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+
+	.icon {
+		font-size: (24 / 18) * 1em;
+		color: $primary;
+	}
+
+	.list-terms-1-link-big {
+		font-size: (24 / 18) * 1em;
+	}
+
+	dt + dd {
+		margin-top: 9px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		dd {
+			font-size: 18px;
+
+			> * + * {
+				margin-left: 14px;
+			}
+		}
+
+		dt + dd {
+			margin-top: 10px;
+		}
+	}
+}
+
+//
+// List Terms Inline
+//
+.list-terms-inline {
+	dt,
+	dd {
+		display: inline;
+	}
+
+	dt {
+		margin-right: 5px;
+	}
+
+	dd {
+		color: $gray-1;
+	}
+}
+
+//
+// Index list
+//
+.index-list {
+	counter-reset: li;
+
+	> li {
+		.list-index-counter {
+			&::before {
+				content: counter(li, decimal-leading-zero);
+				counter-increment: li;
+			}
+		}
+	}
+}
+
+//
+// Marked list
+//
+.list-marked {
+	padding-left: 25px;
+	text-align: left;
+
+	> li {
+		text-indent: -25px;
+		padding-left: 25px;
+		&::before {
+			position: relative;
+			display: inline-block;
+			left: 25px;
+			top: -1px;
+			min-width: 25px;
+			content: '\f105';
+			font: 400 14px/24px 'FontAwesome';
+			color: $gray-6;
+		}
+	}
+
+	> li + li {
+		margin-top: 9px;
+	}
+}
+
+* + .list-marked {
+	margin-top: 15px;
+}
+
+p + .list-marked {
+	margin-top: 10px;
+}
+
+.list-quadrate {
+	a {
+		display: block;
+		position: relative;
+		padding-left: 20px;
+
+		.list-quadrate-count,
+		&::before {
+			position: absolute;
+		}
+
+		&::before {
+			content: '';
+			left: 0;
+			top: 50%;
+			transform: translateY(-59%);
+			width: 8px;
+			height: 8px;
+			background-color: $body-color;
+			transition: .3s ease-out all;
+		}
+
+		.list-quadrate-count {
+			right: 0;
+		}
+
+		&, &:focus, &:active {
+			color: $body-color;
+		}
+		&:hover {
+			color: $primary;
+			&::before {
+				background-color: $primary;
+			}
+		}
+	}
+
+	> li + li {
+		margin-top: 12px;
+	}
+}
+
+//
+// Ordered List
+//
+.list-ordered {
+	counter-reset: li;
+	padding-left: 25px;
+	text-align: left;
+
+	> li {
+		position: relative;
+		padding-left: 25px;
+
+		&::before {
+			content: counter(li, decimal) '.';
+			counter-increment: li;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: inline-block;
+			width: 15px;
+			color: $gray-400;
+		}
+	}
+
+	> li + li {
+		margin-top: 10px;
+	}
+}
+
+* + .list-ordered {
+	margin-top: 15px;
+}
+
+.list-1 {
+	letter-spacing: 0;
+
+	> li + li {
+		margin-top: 6px;
+	}
+
+	.icon {
+		position: relative;
+		top: 1px;
+		margin-right: 18px;
+		font-size: 18px;
+	}
+
+	.bg-gray-31 & {
+		color: $white;
+		a {
+			&,
+			&:focus,
+			&:active {
+				color: $white;
+			}
+			&:hover {
+				color: $secondary;
+			}
+		}
+		.icon {
+			color: $gray-27;
+		}
+	}
+
+	* + & {
+		margin-top: 15px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		* + & {
+			margin-top: 32px;
+		}
+	}
+}
+
+.list-2 {
+	> li {
+		padding: 20px 0;
+	}
+
+	> li + li {
+		border-top: 1px solid $gray-10;
+	}
+
+	* + .link-with-icon {
+		margin-top: 14px;
+	}
+
+	.pre-footer-static & {
+		color: $gray-1;
+		letter-spacing: 0;
+	}
+
+	* + & {
+		margin-top: 7px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		> li {
+			padding: 26px 0;
+		}
+	}
+}
+
+// List 3
+.list-3 {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 355px;
+	text-align: left;
+	color: $gray-1;
+	letter-spacing: .02em;
+	margin-bottom: -10px;
+
+	> li {
+		position: relative;
+		min-width: 50%;
+		margin-bottom: 10px;
+		padding-left: 20px;
+		&::before {
+			position: absolute;
+			display: inline-block;
+			left: 0;
+			top: -1px;
+			min-width: 25px;
+			content: '\f105';
+			font: 400 16px/24px 'FontAwesome';
+			color: $gray-6;
+		}
+	}
+
+	* + & { margin-top: 20px; }
+
+	& + * { margin-top: 30px; }
+
+	& + .button { margin-top: 30px; }
+
+	@include media-breakpoint-up(xl) {
+		* + & { margin-top: 25px; }
+
+		& + .button { margin-top: 40px; }
+	}
+}
+
+// List layout
+.list-layout {
+	margin-right: -3px;
+	> li {
+		display: inline-block;
+		margin-right: 3px;
+	}
+	a, span {
+		&,
+		&:focus,
+		&:active {
+			color: $body-color;
+		}
+
+		&:hover {
+			color: $primary;
+		}
+
+		&.active {
+			color: $primary;
+		}
+	}
+}
+
+//
+// List Marked 1
+//
+.list-marked-1 {
+	margin-bottom: -8px;
+	> li {
+		position: relative;
+		padding-left: 15px;
+		margin-bottom: 8px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 6px;
+			width: 8px;
+			height: 8px;
+			background: $secondary;
+		}
+	}
+}
+
+* + .list-marked-1 { margin-top: 27px; }
+
+//
+// List Marked 2
+//
+.list-marked-2 {
+	> li {
+		position: relative;
+		letter-spacing: 0;
+		color: $gray-1;
+
+		&::before {
+			content: '\f222';
+			font-family: 'Material Design Icons';
+			display: inline-block;
+			margin-right: 4px;
+			font-size: 18px;
+			color: $primary;
+		}
+	}
+
+	> li + li { margin-top: 8px; }
+}
+
+* + .list-marked-2 { margin-top: 27px; }
+
+//
+// List Marked 3
+//
+.list-marked-3 {
+	font-family: $font-family-sec;
+  line-height: (24 / 16);
+	color: $black;
+  
+	> li {
+    position: relative;
+		padding-left: 27px;
+    
+    &::before {
+			position: absolute;
+			left: 0;
+      content: '\e005';
+			font-family: 'fl-flat-icons-set-2';
+			font-size: 13px;
+			color: $primary;
+    }
+  } 
+	
+	> li + li {
+		margin-top: 14px;
+	}
+	
+	@include media-breakpoint-up(lg) {
+		font-size: 16px; 
+		
+		> li {
+			&::before {
+				font-size: 15px;
+			}
+		}
+	}
+}
+
+%context-dark {
+	.list-marked-3 {
+		color: $white;
+		> li {
+			&::before {
+				color: $secondary;
+			}
+		}
+	}
+}
+
+* + .list-marked-3 {margin-top: 24px; }
+
+@include media-breakpoint-up(md) {
+	h2 + .list-marked-3 {margin-top: 30px; } 
+}
+
+//
+// List Inline Bordered
+//
+.list-inline-bordered {
+	margin-left: -20px;
+	margin-right: -20px;
+	> li {
+		display: inline-block;
+		line-height: 1.2;
+		vertical-align: middle;
+		padding: 0 20px;
+
+		&:not(:last-child) {
+			border-right: 1px solid $gray-10;
+		}
+	}
+	label {
+		cursor: pointer;
+	}
+
+	span {
+		color: inherit;
+		transition: .2s;
+	}
+
+	input {
+		@include sr-only;
+	}
+
+	label:hover span, 
+	input:checked ~ span  {
+		color: $primary;
+	}
+}
+
+%context-dark {
+	.list-inline-bordered {
+		> li {
+			&:not(:last-child) {
+				border-right-color: rgba($white, .5);
+			}
+		}
+
+		span {
+			color: darken($lightblue, 5%);
+		}
+
+		label:hover span,
+		input:checked ~ span  {
+			color: $white;
+		}
+	}
+}
