@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!--<title>Agency - Start Bootstrap Theme</title>!-->
+    <title>main</title>
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Theme CSS -->
+    <link href="../static/css/agency.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" integrity="sha384-0s5Pv64cNZJieYFkXYOTId2HMA2Lfb6q2nAcx2n0RTLUnCAoTTsS0nKEO27XyKcY" crossorigin="anonymous"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
+    <![endif]-->
+    <script Language="Javascript" src="../static/jsme/logt.js"></script>
+
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">trip NSW</a>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <!--<a class="page-scroll" href="#services">Services</a>!-->
+                        <a href="/tripnsw/register" class="btn" href="#likes">Register</a>
+
+                    </li>
+                    <li>
+                        <!--<a class="page-scroll" href="#portfolio">Portfolio</a>!-->
+                        <a href="/tripnsw/login" class="btn" href="#login">login</a>
+
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Welcome To Our Accommodation!</div>
+                <div class="intro-heading">BETTER LIVE & TRAVEL</div>
+                <p class="formRight">
+                    <form>
+                        <div style="display:inline;color:black;">
+                            <label for="check_indate" style='padding-right:2px;font-size:20px;color:white;'>Check in:</label>
+                            <input style="width:250px; padding-top: 8px; padding-bottom: 8px; border-radius: 7px; border:0；" type="date" id="check_indate" name="check_indate" min="2019-06-23">
+                        </div>
+                        <div style="display:inline;color:black;">
+                            <label for="check_outdate" style='margin-left:60px;padding-right:2px;font-size:20px;color:white;'>Check out:</label>
+                            <input style="width:250px; padding-top: 8px; padding-bottom: 8px; border-radius: 7px; border:0;"  type="date" id="check_outdate" name="check_outdate" min="today">
+                        </div>
+                        <div style="display:inline;">
+                            <span style='padding-right:2px;margin-left:60px;font-size:20px;'>Area:</span>
+                            <select id="suburb" class="box2" style="color: black; width:250px; border-radius: 7px; padding-top: 8px; padding-bottom: 8px;" name="suburb">
+                                <option>Auburn</option>
+                                <option>Bankstown</option>
+                                <option>Campbelltown</option>
+                                <option>Castle Hill</option>
+                                <option>Darlingghurst</option>
+                                <option>Kingsford</option>
+                                <option>Liverpool</option>
+                                <option>Randwick</option>
+                                <option>Surry Hills</option>
+                                <option>Wollongong</option>
+                            </select>
+                        </div>
+                    </form>
+                </p>
+                <p class="formRight">
+                    <!-- <span style='padding-right:2px;font-size:20px;'>Area:</span>
+                    <select id="suburb" class="box2" style="color: black;" name="suburb">
+                        <option>Albury</option>
+                        <option>Central Coast</option>
+                        <option>Coffs Harbour</option>
+                        <option>Newcastle</option>
+                        <option>Northern Rivers</option>
+                        <option>Orange</option>
+                        <option>Port Macquaire</option>
+                        <option>Sydney</option>
+                        <option>Tamworth</option>
+                        <option>Wollongong</option>
+                    </select> -->
+                    <!--<a href="#services" class="page-scroll btn btn-xl">Search</a>!-->
+                    <a href="#services" style="margin-top:0;padding: 12px 60px 12px 60px; margin: auto; margin-top: 50px" class="page-scroll btn btn-xl">NEXT</a>
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Services</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+                    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                    <link rel="stylegoogle" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+                    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>!-->
+                    <!--<span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                    </span>!-->
+                    <!--<h4 class="service-heading">E-Commerce</h4>!-->
+                    <!--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>!-->
+                    <!-- <form>
+                            <div>
+                              <label for="party">Check in:</label>
+                              <input type="date" id="party" name="party" min="2019-06-23">
+                            </div>
+                            <br />
+                            <div>
+                                    <label for="party">Check out:</label>
+                                    <input type="date" id="party" name="party" min="today">
+                            </div>
+                    </form> -->
+                    <br />
+                    <p><input type="checkbox" name="g_bath" value="g_bath" style="zoom:150%;"/> Shower(General)    <i class="fa fa-shower fa-lg"></i></p>
+
+                    <p><input type="checkbox" name="breakfast" value="breakfast" style="zoom:150%;"/> Breakfast <i style='font-size:18px' class='fas'>&#xf7ec;</i></p>
+                    <p><input type="checkbox" name="kitchen" value="kitchen" style="zoom:150%;"/> Kitchen   <i style='font-size:20px' class='fas'>&#xf80f;</i></p>
+                    <p><input type="checkbox" name="air" value="air" style="zoom:150%;"/> Air conditioned   <i style='font-size:20px' class='fas'>&#xf76b;</i></p>
+
+                </div>
+                <div class="col-md-3">
+                    <!--<span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>!-->
+                    <!--<h4 class="service-heading">Responsive Design</h4>!-->
+                    <!--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>!-->
+                    <br />
+                    <p><input type="checkbox" name="swimming" value="swimming" style="zoom:150%;"/> Swimming Pool   <i style='font-size:22px' class='fas'>&#xf773;</i></p>
+                    <p><input type="checkbox" name="daytrip" value="daytrip" style="zoom:150%;"/> Day trip  <i class="fa fa-suitcase fa-lg"></i></p>
+                    <p><input type="checkbox" name="bars" value="bars" style="zoom:150%;"/> Bars    <i class="fa fa-glass fa-lg"></i></p>
+                    <p><input type="checkbox" name="restaurants" value="restaurants" style="zoom:150%;"/> Restaurants   <i style='font-size:20px' class='fas'>&#xf805;</i></p>
+                    
+
+                </div>
+                <div class="col-md-3">
+                    <!--<span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+                    </span>!-->
+                    <!--<h4 class="service-heading">Web Security</h4>!-->
+                    <!--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>!-->
+                    <br \>
+                    <p><input type="checkbox" name="parties" value="parties" style="zoom:150%;"/> Parties   <i style='font-size:22px' class='fas'>&#xf79f;</i></p>
+                    <p><input type="checkbox" name="parking" value="parking" style="zoom:150%;"/> Parking   <i class="fa fa-car fa-lg"></i></p>
+                    <p><input type="checkbox" name="laundary" value="laundary" style="zoom:150%;"/>Laundary Service <i style='font-size:20px' class='fas'>&#xf043;</i></p>
+                    <p><input type="checkbox" name="translation" value="translation" style="zoom:150%;"/> Translation   <i class="fa fa-american-sign-language-interpreting fa-lg"></i></p>
+                </div>
+                <div class="col-md-3">
+                    <br \>
+                    <p><input type="checkbox" name="d_bath" value="d_bath" style="zoom:150%;"/> Bath(Disabled)  <i style='font-size:22px' class='fas'>&#xf2cd;</i></p>
+                    <p><input type="checkbox" name="wheelchair" value="wheelchair" style="zoom:150%;"/> Wheelchair  <i style='font-size:22px' class='fas'>&#xf193;</i></p>
+                    <p><input type="checkbox" name="elevator" value="elevator" style="zoom:150%;"/> Barrier-free elevator   <i style='font-size:20px' class='fas'>&#xf013;</i></p>
+                    <p><input type="checkbox" name="dog" value="dog" style="zoom:150%;"/> Guide dog <i style='font-size:22px' class='fas'>&#xf29d;</i></p>
+                </div>
+            </div>
+        </div>
+        <!--<input type="submit" value="Submit" />!-->
+        <!--<input type="button" value="Click Me" style="float: right;">!-->
+        <!-- <button type="button" class="btn btn-primary btn-lg" style="display:block;margin:0 auto">Submit</button>  -->
+        <br />
+        <center><a class="btn btn-primary btn-lg" onclick="choose()"/>Submit</a ></center>
+    </section>
+
+
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">NSW popular Area</h2>
+                    <br/>
+                    <!--<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>!-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a id="link1" class="portfolio-link" data-toggle="modal" onclick="search_byarea('Darlinghurst')"/>
+                    <!--<a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">-->
+                        <div class="portfolio-hover">
+                            <div>
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="../static/img/portfolio/Sydney.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Darlinghurst</h4>
+                        <!--<p class="text-muted">Graphic Design</p>!-->
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a id="link2" class="portfolio-link" data-toggle="modal" onclick="search_byarea('Campbelltown')"/>
+                    <!--<a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">-->
+                        <div class="portfolio-hover">
+                            <!-- modified the next line, delete class="portfolio-hover-content" -->
+                            <div>
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="../static/img/portfolio/Newcastle.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Campbelltown</h4>
+                        <!--<p class="text-muted">Website Design</p>!-->
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a id="link3" class="portfolio-link" data-toggle="modal" onclick="search_byarea('Wollongong')"/>
+                    <!--<a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">-->
+                        <div class="portfolio-hover">
+                            <div>
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="../static/img/portfolio/Wollongong.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Wollongong</h4>
+                        <!--<p class="text-muted">Website Design</p>!-->
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a id="link4" class="portfolio-link" data-toggle="modal" onclick="search_byarea('Liverpool')"/>
+                    <!--<a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">-->
+                        <div class="portfolio-hover">
+                            <div>
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="../static/img/portfolio/Central Coast.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Liverpool</h4>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a id="link5" class="portfolio-link" data-toggle="modal" onclick="search_byarea('Surry Hills')"/>
+                    <!--<a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">-->
+                        <div class="portfolio-hover">
+                            <div>
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="../static/img/portfolio/Albury.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Surry Hills</h4>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a id="link6" class="portfolio-link" data-toggle="modal" onclick="search_byarea('Randwick')"/>
+
+                    <!--<a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">-->
+                        <div class="portfolio-hover">
+                            <div>
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="../static/img/portfolio/Orange.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Randwick</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer class="footer-section">
+            <div class="container">
+                <div class="row p-37">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-address">
+                            <br />
+                            <h5>Get In Touch</h5>
+                            <ul>
+                                <li><i class="flaticon-placeholder"></i><span>132 Liberty Streetelit, Plano, Sydney</span>
+                                </li>
+                                <li><i class="flaticon-envelope"></i><span>tripNSW@gmail.com</span></li>
+                                <li><i class="flaticon-smartphone"></i><span>214-805-4428</span></li>
+                            </ul>
+                            <p>Calling time: Monday – Friday: 9 am – 6 pm</p>
+                            <p>Saturday: 9 am – 3pm</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row p-20">
+                    <div class="col-lg-12 text-center">
+                        <div class="copyright">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <!-- Portfolio Modals -->
+    <!-- Use the modals below to showcase details about your portfolio projects! -->
+
+
+    <!-- jQuery -->
+    <script src="../static/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb" crossorigin="anonymous"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="../static/js/jqBootstrapValidation.js"></script>
+    <script src="../static/js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../static/js/agency.min.js"></script>
+
+</body>
+
+</html>
